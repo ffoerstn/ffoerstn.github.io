@@ -1,29 +1,89 @@
 <html>
   <head>
-    <title>Lab 5.3 Web Page.</title>
+    <title>Lab 5.2 Web Page</title>
   <style>
-    
+    body {width: 100%;}
+    #main {
+      width: 75%;
+      text-align: left;
+      margin: 0px auto;
+      font-family: "Times New Roman";
+    }
+    #intro {
+      margin-bottom: 50px;
+      background-color: rgb(145,145,145);
+    }
+    #image {
+      font-size: 12px;
+      text-align: right;
+      margin-left: auto;
+      margin-right: 0px;
+      margin-bottom: 80px;
+      padding: 1px;
+      float: right;
+      width: 75%;
+    }
+    #myphoto {
+      height: auto;
+      border: 1px solid rgb(200,200,200);
+      width: 500px;
+    }
+    #endings {
+      background-color: rgb(200,200,200);
+      font-family: verdana;
+      list-style-position: inside;
+      margin-bottom: 75px;
+    }
+    #requirements {
+    background-color: rgb(145,145,145);
+    }
+    #table {
+      margin: 0 auto;
+      text-align: center;
+      font-family: georgia;
+      margin-bottom: 50px;
+      background-color: rgb(200,200,200);
+      border: 1px solid;
+    }
+    #link {
+      font-size: 10px;
+      font-style: bold;
+    }
+   h1 {
+      font-family: georgia;
+      font-weight: bold;
+      text-decoration: underline;
+      color: rgb(180,180,0);
+    }
+    h2 {
+      font-family: georgia;
+      font-weight: bold;
+      color: rgb(180,180,0);
+    }
   </style>
   </head>
   <body>
     <div id = "main">
-    <h1>Lab 5.3 Web Page</h1>
+    <div id = "intro">
+    <h1>Lab 5.1 Web Page</h1>
       <p>This is my my second web page for Lab 4 of GIS 3410 at MSU Denver. I'm honestly quite surprised at how easy HTML is to understand.</p>
     <h2>The Fallen Leaves Tell a Story...</h2>
       <p>Of how a Tarnished became <strong>Elden Lord</strong>.
       In our home, across the fog, in the Lands Between,
       Our seed will look back look back upon us and recall an <strong>Age of Fracture</strong>.</p>
+    </div>
 
     <div id = "image">
-    <img src = "age_of_fracture.png">
+    <img id = "myphoto" src = "age_of_fracture2.png">
     <p class = "label">Age of Fracture Ending</p>
     <p class = "label">Photo from eldenring.wiki.fextralife.com</p>
     </div>
-    
+
+
+    <div id = "endings">
     <H2>Elden Ring's Many Endings</H2>
       <p>Elden Ring is an open-world action adventure game produced by Fromsoftware. Above is the monologue heard in its <strong>Age of Fracture</strong> ending, which is only one of many. In total, there are 6, which includes:</p>
 
-    <div id = "endings">
     <ul>
       <li>Age of Fracture</li>
       <li>Age of the Duskborn</li>
@@ -34,10 +94,10 @@
     </ul>
     </div>
 
+    <div id = "requirements">  
     <H2>Requirements For Each Ending</H2>
-      
-    <div id = "requirements">
-    <table>
+  
+    <table id = "table">
       <tr>
         <th>Ending</th>
         <th>Requirement</th>
@@ -69,7 +129,7 @@
     </table>
     </div>
 
-      <p>For more information, <a href = "https://eldenring.wiki.fextralife.com/Endings">Fextralife</a> provides a good guide on getting all the endings.</p>
+      <p id = "link">For more information, <a href = "https://eldenring.wiki.fextralife.com/Endings">Fextralife</a> provides a good guide on getting all the endings.</p>
 
     </div>
   </body>
