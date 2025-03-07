@@ -71,8 +71,8 @@
 
   <script>
 $(document).ready( function() {
-  $("#hidetable").click( function() {
-    $("#table").toggle();
+  $("#reveal").click( function() {
+    $("endingslist").show();
   });
 });
   </script>
@@ -99,7 +99,9 @@ $(document).ready( function() {
     <H2>Elden Ring's Many Endings</H2>
       <p>Elden Ring is an open-world action adventure game produced by Fromsoftware. Above is the monologue heard in its <strong>Age of Fracture</strong> ending, which is only one of many. In total, there are 6, which includes:</p>
 
-    <ul>
+    <button id = "reveal">Reveal</button>
+      
+    <ul id = "endingslist">
       <li>Age of Fracture</li>
       <li>Age of the Duskborn</li>
       <li>Age of Order</li>
@@ -111,8 +113,6 @@ $(document).ready( function() {
 
     <div id = "requirements">  
     <H2>Requirements For Each Ending</H2>
-      
-    <button id = "hidetable">Show / Hide Table</button>
   
     <table id = "table">
       <tr>
