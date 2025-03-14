@@ -17,7 +17,7 @@
                 }
           #info { padding: 20px; 
                   font-color: red;
-                  background-color: yellow; 
+                  background-color: blue; 
                 }
         </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -70,7 +70,7 @@
                       // are they out of tries? then they lost!
                       if (tries < 1) {
                         gameLost = true;
-                        $("#info").text("GAME OVER, YOU LOSE");
+                        $("#info").text("YOU LOSE");
                       }
 
                     
@@ -99,7 +99,7 @@
                       // check if the player has won the game
                       if (!blank.includes("-")) {
                         gameWon = true;
-                        $("#info").text("GAME OVER, YOU WIN");
+                        $("#info").text("YOU WIN");
                       }
 
 
@@ -126,7 +126,7 @@
       <div id="guesses">Guesses left: 10</div>
       <div id="info"></div>
       <div id="word">- - - - - - - - - -</div>
-      <div id="alphabet"><p>Click to make a guess!</p>
+      <div id="alphabet"><p>Click to make a guess! The word is a country in Asia.</p>
         <span class="letter" id="a">a</span>
         <span class="letter" id="b">b</span>
         <span class="letter" id="c">c</span>
