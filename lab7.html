@@ -22,7 +22,8 @@
         maxZoom: 19,
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         }).addTo(map);
-        var marker = L.marker([39.745775, -105.007635]).addTo(map);
+        var marker = L.marker([39.745775, -105.007635]).addTo(map).bindPopup("<b>Jordan Student Success Building.</b><br>I work here.");
+        var marker = L.marker([39.743769, -105.001785]).addTo(map).bindPopup("<b>Science Building.</b><br>Most of my classes are found here.");
         var circle = L.circle([39.755, -105.002], {
           color: 'green',
           fillColor: '#1aff00',
@@ -35,7 +36,6 @@
           [39.74494, -105.005023],
           [39.744596, -105.005895]
         ]).addTo(map);
-        marker.bindPopup("<b>Jordan Student Success Building.</b><br>I work here.").openPopup();
         circle.bindPopup("I often come here for lunch.");
         polygon.bindPopup("When I'm lazy and don't want to walk far, I come here as well.");
         var popup = L.popup();
