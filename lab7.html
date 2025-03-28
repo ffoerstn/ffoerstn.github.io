@@ -35,7 +35,9 @@
           [39.74494, -105.005023],
           [39.744596, -105.005895]
         ]).addTo(map);
-
+        marker.bindPopup("<b>Jordan Student Success Building.</b><br>I work here.").openPopup();
+        circle.bindPopup("I often come here for lunch.");
+        polygon.bindPopup("When I'm lazy and don't want to walk far, I come here as well.");
         var popup = L.popup();
         function onMapClick(e) {
           popup
