@@ -68,6 +68,11 @@
 		
 
 		// let's add the Denver ACS data -- ##4 here
+		$.getJSON('./acs_denver_2021.geojson', function(data) {
+			acsDenver2021layer = L.geoJSON(data).addTo(map);
+			map.panTo(acsDenver2021layer.getBounds().getCenter());
+			layerControl.addOverlay(acsDenver2021layer, "Census 2021");
+		});
 		
 
 		// let's try to add some remote DRCOG data
