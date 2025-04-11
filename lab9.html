@@ -67,14 +67,14 @@
 		var layerControl = L.control.layers(baseMaps, null).addTo(map);
 
 		function style1(feature) {
-			d = feature.properties.PCT_POVERTY;
-			answer = d > 30 ? '#800026' :
-			d > 20 ? '#DB0026 ' :
-			d > 15 ? '#E31A1C' :
-			d > 10 ? '#FC4E2A' :
-			d > 5 ? '#FD8D3C' :
-			d > 3 ? '#FEB24C' :
-			d > 1 ? '#FED976' :
+			d = feature.properties.MEDIAN_AGE_ALL;
+			answer = d > 70 ? '#800026' :
+			d > 60 ? '#DB0026 ' :
+			d > 50 ? '#E31A1C' :
+			d > 40 ? '#FC4E2A' :
+			d > 30 ? '#FD8D3C' :
+			d > 20 ? '#FEB24C' :
+			d > 10 ? '#FED976' :
 			'#FFEDA0';
 			styleReturn = {
 			fillColor : answer,
@@ -91,7 +91,7 @@
 		$.getJSON('./acs_denver_2021.geojson', function(data) {
 			acsDenver2021Layer = L.geoJSON(data,
 			{style: style1, onEachFeature: function(feature,layer) {
-				layer.bindPopup("Percent Poverty: " + feature.properties.PCT_POVERTY + "%");
+				layer.bindPopup("Percent Poverty: " + feature.properties.MEDIAN_AGE_ALL + "%");
 			}}).addTo(map);
 			map.panTo(acsDenver2021Layer.getBounds().getCenter());
 			layerControl.addOverlay(acsDenver2021Layer, "Census 2021");
@@ -114,7 +114,7 @@
 
 
 <div id="header">
-	<h1><a href="https://www.census.gov/programs-surveys/acs">Denver 2021 American Community Survey (Census) data</a></h1>
+	<h1><a href="https://www.census.gov/programs-surveys/acs">Median Age by Census Tract, As Reported by the 2021 American Community Survey</a></h1>
 	<p>Data from <a href="https://opendata-geospatialdenver.hub.arcgis.com/maps/619c7f836b6e4188b0e0f0458aecba26">Denver Open Data Catalog</a></p>
 </div>
 <div id="map"></div>
