@@ -89,13 +89,11 @@
 
 		// let's add the Denver ACS data -- ##4 here
 		$.getJSON('./acs_denver_2021.geojson', function(data) {
-			acsDenver2021layer = L.geoJSONdata, {style: style1,
-				onEachFeature: function(feature, layer) {
-					layer.bindPopup("Percent Poverty: " + feature.properties.PCT_POVERTY + "%");
-			}}).addTo(map);
-			map.panTo(acsDenver2021layer.getBounds().getCenter());
-			layerControl.addOverlay(acsDenver2021layer, "Census 2021");
-		});
+			acsDenver2021Layer = L.geoJSON(data,
+			{style: style1}).addTo(map);
+			map.panTo(acsDenver2021Layer.getBounds().getCenter());
+			layerControl.addOverlay(acsDenver2021Layer, "Census 2021");
+			});
 		
 
 		// let's try to add some remote DRCOG data
