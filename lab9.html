@@ -92,7 +92,7 @@
 			acsDenver2021layer = L.geoJSONdata, {style: style1,
 				onEachFeature: function(feature, layer) {
 					layer.bindPopup("Percent Poverty: " + feature.properties.PCT_POVERTY + "%");
-			}}.addTo(map);
+			}}).addTo(map);
 			map.panTo(acsDenver2021layer.getBounds().getCenter());
 			layerControl.addOverlay(acsDenver2021layer, "Census 2021");
 		});
