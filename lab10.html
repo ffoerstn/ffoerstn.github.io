@@ -119,12 +119,13 @@
 
     var legend = L.control({position: 'bottomright'});
     legend.onAdd = function (map) {
-      colors = ['#edf8fb','#bfd3e6','#9ebcda' ,'#8c96c6','#8856a7','#810f7c'];
-      labels = ['0 - 20', '21 - 30', '31 - 40', '41 - 50', '61 - 60', '60+'];
-      div.innerHTML = '<h2>Median Age</h2>';
-      for (var i = 0; i < colors.length; i++) {
-      div.innerHTML += '<i style="background:' + colors[i] + '"></i> ' + labels[i] +
-      '<br>';
+	var div = L.DomUtil.create('div', 'info legend');
+		colors = ['#edf8fb','#bfd3e6','#9ebcda' ,'#8c96c6','#8856a7','#810f7c'];
+		labels = ['0 - 20', '21 - 30', '31 - 40', '41 - 50', '61 - 60', '60+'];
+	div.innerHTML = '<h2>Median Age</h2>';
+	for (var i = 0; i < colors.length; i++) {
+		div.innerHTML += '<i style="background:' + colors[i] + '"></i> ' + labels[i] +
+		'<br>';
     }
     return div;
     };
