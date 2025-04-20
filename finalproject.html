@@ -88,8 +88,8 @@
 			answer = d <= 69.1 ? '#7a0177' :
 			d <= 48.9 ? '#c51b8a' :
 			d <= 41.3 ? '#f768a1' :
-			d <= 35 ? '#fbb4b9' :
-			d <= 28 ? '#feebe2' :
+			d > 35 ? '#fbb4b9' :
+			'#feebe2' ;
 			styleReturn = {
 			fillColor : answer,
 			weight : 1,
