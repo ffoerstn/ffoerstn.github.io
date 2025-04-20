@@ -80,6 +80,19 @@
 			"Humanitarian OSM" : HOTOSMTiles,
 			"OpenTopoMap" : OpenTopoMap };
 
+		var buildings;
+			$.getJSON("buildings.json", function(json) {
+			// add GeoJSON layer to the map once the file is loaded
+			buildings = L.geoJson(json,{
+				onEachFeature: function (feature, layer) {
+					layer.bindPopup("Building Type: " + feature.properties.BLDG_TYPE +
+						"<br>Building Height: " + feature.properties.BLDG_HEIGH +
+						"<br>Ground Elevation: " + feature.properties.GROUND_ELE);
+				}
+			})
+			layerMenu.addOverlay(buildings, "Buildings");
+			});
+
 		// the control let's the user turn on / off layers -- ##3 here
 		var layerControl = L.control.layers(baseMaps, null).addTo(map);
 
