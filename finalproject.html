@@ -84,7 +84,7 @@
 		var layerControl = L.control.layers(baseMaps, null).addTo(map);
 
 		function style1(feature) {
-			d = feature.properties.MEDIAN_AGE_ALL;
+			d = feature.properties.Median_Age;
 			answer = d > 60 ? '#810f7c' :
 			d > 50 ? '#8856a7' :
 			d > 40 ? '#8c96c6' :
@@ -103,12 +103,12 @@
 		}
 
 		// let's add the Denver ACS data -- ##4 here
-		$.getJSON('./acs_denver_2021.geojson', function(data) {
-			acsDenver2021Layer = L.geoJSON(data,
+		$.getJSON('./seattleacs.geojson', function(data) {
+			seattleacsLayer = L.geoJSON(data,
 			{style: style1, onEachFeature: function(feature,layer) {
-				layer.bindPopup("Median Age: " + feature.properties.MEDIAN_AGE_ALL);
+				layer.bindPopup("Median Age: " + feature.properties.Median_Age);
 			}}).addTo(map);
-			map.panTo(acsDenver2021Layer.getBounds().getCenter());
+			map.panTo(seattleacsLayer.getBounds().getCenter());
 			layerControl.addOverlay(acsDenver2021Layer, "Census 2021");
 			});
 		
