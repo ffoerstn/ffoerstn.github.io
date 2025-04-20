@@ -57,15 +57,10 @@
 
 <script>
 
-  // the document ready wraps our javascript
-	// to make sure that everything loads in the 
-	// right order
 	$(document).ready(function() {
 
-		// let's create our basemap! -- ##1 here
 		map = L.map('map').setView([0,0], 10);
 		
-		// let's add three sets of background tiles - one from OSM,  one from HOT OSM, and one from openTopoMap
 		var OSMTiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 			maxZoom: 19,
 			attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
@@ -78,12 +73,10 @@
 			attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
 			});
 		
-		// this is an object to keep track of our three basemaps -- ##2 here
 		var baseMaps = { "OpenStreetMap" : OSMTiles,
 			"OpenTopoMap" : OpenTopoMap,
 			"Satellite" : Esri_WorldImagery };
 
-		// the control let's the user turn on / off layers -- ##3 here
 		var layerControl = L.control.layers(baseMaps, null).addTo(map);
 
 		function style1(feature) {
@@ -104,7 +97,6 @@
 			return styleReturn;
 		}
 
-		// let's add the Denver ACS data -- ##4 here
 		$.getJSON('./seattleacs.geojson', function(data) {
 			seattleacsLayer = L.geoJSON(data,
 			{style: style1, onEachFeature: function(feature,layer) {
@@ -128,7 +120,6 @@
     };
     legend.addTo(map);
 
-	// end document ready
 	});
 
 
