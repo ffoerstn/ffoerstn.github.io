@@ -77,8 +77,8 @@
 
 		// this is an object to keep track of our three basemaps -- ##2 here
 		var baseMaps = { "OpenStreetMap" : OSMTiles,
-			"Humanitarian OSM" : HOTOSMTiles,
-			"OpenTopoMap" : OpenTopoMap };
+			"OpenTopoMap" : OpenTopoMap,
+			"Satellite" : Esri.WorldImagery };
 
 		// the control let's the user turn on / off layers -- ##3 here
 		var layerControl = L.control.layers(baseMaps, null).addTo(map);
