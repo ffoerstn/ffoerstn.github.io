@@ -85,11 +85,11 @@
 
 		function style1(feature) {
 			d = feature.properties.Median_Age;
-			answer = d <= 69.1 ? '#7a0177' :
-			d <= 48.9 ? '#c51b8a' :
-			d <= 41.3 ? '#f768a1' :
-			d <= 35 ? '#fbb4b9' :
-			d <= 28 ? '#feebe2' :
+			answer = d >= 48.91 ? '#7a0177' :
+			d >= 41.31 ? '#c51b8a' :
+			d >= 35.01 ? '#f768a1' :
+			d >= 28.01 ? '#fbb4b9' :
+			d >= 19.1 ? '#feebe2' :
 			'#ffffff' ;
 			styleReturn = {
 			fillColor : answer,
